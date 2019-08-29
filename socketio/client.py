@@ -166,7 +166,7 @@ class Client(object):
             namespace_handler
 
     def connect(self, url, headers={}, transports=None,
-                namespaces=None, socketio_path='socket.io'):
+                namespaces=None, socketio_path='socket.io', certfile=None):
         """Connect to a Socket.IO server.
 
         :param url: The URL of the Socket.IO server. It can include custom
@@ -205,7 +205,7 @@ class Client(object):
         self.namespaces = [n for n in namespaces if n != '/']
         try:
             self.eio.connect(url, headers=headers, transports=transports,
-                             engineio_path=socketio_path)
+                             engineio_path=socketio_path, certfile=certfile)
         except engineio.exceptions.ConnectionError as exc:
             six.raise_from(exceptions.ConnectionError(exc.args[0]), None)
 
