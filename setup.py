@@ -16,7 +16,7 @@ with open('README.rst', 'r') as f:
     long_description = f.read()
 
 setup(
-    name='python-socketio',
+    name='galileo-socketio',
     version=version,
     url='http://github.com/miguelgrinberg/python-socketio/',
     license='MIT',
